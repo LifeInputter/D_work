@@ -35,7 +35,7 @@ def works_page(request):
     context = {
         'works': works
         }
-    return render(request, 'works.html', {'works': works})
+    return render(request, 'works_page.html', {'works': works})
 
 def blogs(request):
     articles = Article.objects.all()

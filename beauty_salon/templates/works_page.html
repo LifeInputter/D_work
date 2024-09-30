@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <title>{% block title %}Beauty Salon{% endblock %}</title>
 </head>
@@ -23,7 +24,7 @@
             </ul>
 
         </nav>
-         <button onclick="openCommentForm()" style="width: 116px; height: 36px;">Онлайн-запись</button>
+         <button onclick="openCommentForm()" style="width: 200px; height: 48px;">Онлайн-запись</button>
 
 <script>
 function openCommentForm() {
@@ -42,14 +43,24 @@ function openCommentForm() {
     </header>
 
     <main>
-        <img src="/static/img1.jpg" alt="Описание изображения">
+
         <div class="text-content">
-            {% block content %}{% endblock %}
-        </div>
+            <div class="centered">
+        <h2 class="center">Наши работы</h2>
+                <ul>
+                    {% for work in works %}
+                    <div><img src="{% static 'works/' %}{{ work.image}}" alt="Изображение"></div>
+                    {% endfor %}
+                </ul>
+
     </main>
+
     <footer>
         <p>© 2024 Oazis Salon</p>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

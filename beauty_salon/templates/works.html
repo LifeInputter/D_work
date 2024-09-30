@@ -7,10 +7,9 @@
 {% block content %}
 <div class="centered">
     <h2>Наши работы</h2>
-    <img src="{% static 'works/image3.jpeg'%}" alt="Изображение">
-    <ul>
+        <ul>
         {% for work in works %}
-        <img src="{% static 'works/image4.jpeg'%}" alt="Изображение">
+        <li><img src="{% static 'works/' %}{{ work.image}}" alt="Изображение"></li>
         {% endfor %}
     </ul>
 </div>
