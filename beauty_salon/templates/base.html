@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Beauty Salon{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Салон красоты "Оазис"</h1>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'services' %}">Наши услуги</a></li>
+                <li><a href="{% url 'works' %}">Наши работы</a></li>
+                <li><a href="{% url 'articles' %}">Статьи</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+
+        </nav>
+         <button onclick="openCommentForm()" style="width: 116px; height: 36px;">Онлайн-запись</button>
+
+<script>
+function openCommentForm() {
+    var width = 500;
+    var height = 350;
+    var left = (screen.width - width) / 2;
+    var top = (screen.height - height) / 2;
+
+    window.open('{% url "comment_form" %}', 'CommentForm',
+        'width=' + width + ',height=' + height +
+        ',left=' + left + ',top=' + top +
+        ',resizable=yes,scrollbars=yes,status=yes');
+}
+</script>
+
+    </header>
+
+    <main>
+        <img src="/static/img1.jpg" alt="Описание изображения">
+        <div class="text-content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Oazis Salon</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
