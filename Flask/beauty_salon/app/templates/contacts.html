@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами для получения дополнительной информации и записи на услуги:</p>
+        <h4>Телефон</h4>
+        <p>{{ contact_info.phone }}</p>
+        <h4>Email</h4>
+        <p>{{ contact_info.email }}</p>
+    </div>
+    <div class="col-md-6">
+        <h4>Адрес</h4>
+        <p>{{ contact_info.address }}</p>
+        <h4>Часы работы</h4>
+        <p>{{ contact_info.opening_hours }}</p>
+    </div>
+</div>
+{% endblock %}
