@@ -16,8 +16,8 @@ Base = declarative_base()
 # Инициализация FastAPI
 app = FastAPI()
 
-# app.mount("/test", StaticFiles(directory="app/test"), name="test")
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/static", StaticFiles(directory="app/static"))
+
 # Шаблоны Jinja2
 templates = Jinja2Templates(directory="app/templates")
 TemplateResponse = templates.TemplateResponse
